@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx backend/server.ts",
-    "build": "vite build frontend --outDir ../dist",
-    "preview": "vite preview frontend",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit -p frontend/tsconfig.json && tsc --noEmit -p backend/tsconfig.json"
+    "dev": "cd \"nexus-shop 1\" && tsx backend/server.ts",
+    "build": "cd \"nexus-shop 1\" && vite build frontend --outDir ../dist",
+    "preview": "cd \"nexus-shop 1\" && vite preview frontend",
+    "clean": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true});\"",
+    "lint": "cd \"nexus-shop 1\" && tsc --noEmit -p frontend/tsconfig.json && tsc --noEmit -p backend/tsconfig.json"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

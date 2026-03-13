@@ -61,7 +61,26 @@ Nexus Shop is a professional, full-stack e-commerce platform designed for modern
    ```
    The app will be available at `http://localhost:3000`.
 
-## 📝 License
+## � Run Commands (root + nested)
+
+- From repository root (`Nexus`):
+  ```bash
+  npm run lint      # validates frontend/backend TS
+  npm run build     # builds frontend and outputs to ../dist
+  npm run dev       # starts backend + Vite in dev mode
+  ```
+
+- From nested workspace (`nexus-shop 1`):
+  ```bash
+  cd "nexus-shop 1"
+  npm install
+  npx tsc --noEmit -p frontend/tsconfig.json
+  npx tsc --noEmit -p backend/tsconfig.json
+  npx vite build frontend --outDir ../dist
+  npm run dev
+  ```
+
+## �📝 License
 
 This project is licensed under the MIT License.
 
