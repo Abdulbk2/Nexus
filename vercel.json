@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/server.ts",
+      "src": "nexus-shop 1/backend/server.ts",
       "use": "@vercel/node"
     },
     {
@@ -14,7 +14,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/server.ts"
+      "dest": "nexus-shop 1/backend/server.ts"
     },
     {
       "src": "/assets/(.*)",
