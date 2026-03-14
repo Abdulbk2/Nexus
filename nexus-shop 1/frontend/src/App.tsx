@@ -10,6 +10,7 @@ import Cart from './pages/Cart';
 import AdminDashboard from './pages/AdminDashboard';
 import Success from './pages/Success';
 import ChatBot from './components/ChatBot';
+import { CartItem } from './types';
 
 const Navbar = () => {
   const { user, logout, cart } = useAuth();
@@ -41,7 +42,7 @@ const Navbar = () => {
               <ShoppingCart size={20} />
               {cart.length > 0 && (
                 <span className="absolute top-0 right-0 bg-black text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                  {cart.reduce((acc, item) => acc + item.quantity, 0)}
+                  {cart.reduce((acc: number, item: CartItem) => acc + item.quantity, 0)}
                 </span>
               )}
             </Link>

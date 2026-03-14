@@ -5,13 +5,14 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { formatPrice } from '../utils';
 import { useNavigate } from 'react-router-dom';
+import { CartItem } from '../types';
 
 export default function Cart() {
   const { cart, removeFromCart, updateCartQuantity, token, user } = useAuth();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cart.reduce((acc: number, item: CartItem) => acc + item.price * item.quantity, 0);
 
   const handleCheckout = async () => {
     if (!user) {
